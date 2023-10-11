@@ -1,11 +1,67 @@
+/* Ignore css unknown rules */
+/* stylelint-disable no-descending-specificity */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer components {
-  /* main */
-  .main-container {
-    @apply flex min-h-screen flex-1 flex-col items-center bg-dark-1 px-6 pb-10 pt-28 max-md:pb-32 sm:px-10;
+  .maxwidth_container {
+    @apply max-w-[1200px] mx-auto;
+  }
+
+  /* //* Navbar Styles */
+  .navbarmain {
+    @apply flex justify-between items-center;
+  }
+
+  .navitems_parent {
+    @apply md:flex items-center gap-4 hidden;
+  }
+
+  .navitems {
+    @apply font-poppins font-[500] text-[15px] no-underline pt-[5px];
+  }
+
+  .navbardiv_right {
+    @apply flex items-center gap-2;
+  }
+}
+
+/* //* Button Custom classes */
+@layer utilities {
+  .btn {
+    @apply text-center cursor-pointer justify-center items-center gap-2.5 w-auto tracking-[1px] font-medium transition-all duration-500 ease-in-out rounded-[5px] focus:outline-offset-2 text-[14px] m-0 font-poppins;
+  }
+
+  .btn > svg {
+    @apply text-[17px] m-0;
+  }
+
+  .btn:focus {
+    outline: 2px dashed blue;
+  }
+  .solid-btn {
+    @apply border text-white transition-all duration-500 ease-in-out disabled:cursor-not-allowed disabled:opacity-60 disabled:border-solid bg-blue;
+  }
+  .outline-btn {
+    @apply border text-[black] transition-all duration-500 ease-in-out border-solid border-blue disabled:text-[black] disabled:cursor-not-allowed disabled:opacity-30 disabled:border-[black] disabled:border-solid disabled:border-[1px] bg-white;
+  }
+  .solid-btn:hover,
+  .solid-btn:active,
+  .solid-btn:focus {
+    @apply text-[black] bg-white transition-all duration-500 ease-in-out border-blue border-solid border-[1px];
+  }
+  .solid-btn:disabled {
+    @apply bg-blue;
+  }
+  .outline-btn:focus,
+  .outline-btn:hover,
+  .outline-btn:active {
+    @apply bg-blue text-white transition-all duration-500 ease-in-out;
+  }
+  .btn.bold {
+    @apply font-semibold;
   }
 }
 
@@ -18,28 +74,4 @@
   .cl-organizationPreview
   .cl-organizationPreviewTextContainer {
   @apply max-sm:hidden;
-}
-
-/* Shadcn Component Styles */
-
-/* Account Profile  */
-.account-form_image-label {
-  @apply flex h-24 w-24 items-center justify-center rounded-full bg-dark-4 !important;
-}
-
-.account-form_image-input {
-  @apply cursor-pointer border-none bg-transparent outline-none file:text-blue !important;
-}
-
-.account-form_input {
-  @apply border border-dark-4 bg-dark-3 text-light-1 !important;
-}
-
-/* Comment Form */
-.comment-form {
-  @apply mt-10 flex items-center gap-4 border-y border-y-dark-4 py-5 max-xs:flex-col !important;
-}
-
-.comment-form_btn {
-  @apply rounded-3xl bg-primary-500 px-8 py-2 !text-small-regular text-light-1 max-xs:w-full !important;
 }
