@@ -1,11 +1,8 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
-import Navbarlogo from "public/assets/horizontallogo.svg";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { navbarItems } from "data/NavbarItems";
-import Button from "./button/Button";
 import { AiOutlineRight } from "react-icons/ai";
 
 function Navbar() {

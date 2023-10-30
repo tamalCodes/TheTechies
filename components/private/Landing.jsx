@@ -4,13 +4,13 @@ import { AiOutlineRight } from "react-icons/ai";
 
 const Landing = () => {
   return (
-    <div className="flex flex-col items-center justify-center pt-16 relative">
+    <div className="flex flex-col items-center justify-center relative">
       <h1 className="font-montserrat text-[63px] font-extrabold text-black w-[50%] text-center leading-none ">
         We are the <span className="text-blue">best tech community</span> to
         ever exist.
       </h1>
 
-      <div className="flex items-center gap-2 mt-10 mb-4">
+      <div className="flex items-center gap-2 mt-[4rem] mb-5">
         <div className="relative flex  w-[109px] h-[33px]">
           <Image
             src="https://mir-s3-cdn-cf.behance.net/project_modules/2800_opt_1/e9bae6101650903.5f2369bc9baf7.jpg"
@@ -55,9 +55,9 @@ const Landing = () => {
         </div>
       </div>
 
-      <p className="font-poppins text-black  w-[40%] text-center leading-tight text-[16px] font-normal mb-4">
-        We connect you with the best tech resources, groups and techies. Build
-        projects, collaborate, host events and much more.
+      <p className="font-poppins text-black  w-[40%] text-center leading-tight text-[16px] font-normal mb-7">
+        A place to find the best tech resources, groups and tech enthusiasts.
+        Build projects, collaborate, host events and much more.
       </p>
 
       <button className=" hidden md:flex items-center justify-center gap-2 px-[18px] py-[14px] rounded-[30px] bg-blue text-white">

@@ -5,6 +5,10 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  cursor: url("/assets/cursor.svg"), auto !important;
+}
+
 @layer components {
   .maxwidth_container {
     @apply max-w-[1100px] mx-auto;
