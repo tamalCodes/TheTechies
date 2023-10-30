@@ -11,37 +11,30 @@ import { AiOutlineRight } from "react-icons/ai";
 function Navbar() {
   return (
     <>
-      <nav className="pt-[25px] pl-[1.6rem] pr-[2rem] absolute z-10 w-full">
-        <div className="navbarmain maxwidth_container">
-          <div className="flex items-center gap-[4rem]">
-            <Link href="/">
-              <Image
-                src="./tekhubHorizontalLogo.svg"
-                className="w-[100px] md:w-[110px]"
-                width={100}
-                height={100}
-                alt="Navbar Branding image which reads TekHub in a red color font"
-              />
-            </Link>
+      <nav className="pt-[10px]  absolute z-10 w-full flex">
+        <div className="flex items-center justify-between mx-auto gap-[12rem]">
+          <Link href="/">
+            <h1 className="font-montserrat text-[1.5rem] font-extrabold text-blue m-0">
+              tekHub
+            </h1>
+          </Link>
 
-            <div className="navitems_parent">
-              {navbarItems?.map((item, index) => {
-                return (
-                  <Link
-                    href={item?.link}
-                    className="navitems text-white"
-                    key={index}
-                  >
-                    {item?.name}
-                  </Link>
-                );
-              })}
-            </div>
+          <div className="navitems_parent">
+            {navbarItems?.map((item, index) => {
+              return (
+                <Link href={item?.link} className="navitems" key={index}>
+                  {item?.name}
+                </Link>
+              );
+            })}
           </div>
 
           <div className="navbardiv_right">
-            <button className=" hidden md:flex items-center gap-2 border-solid border-yellow-light border-[1px] px-[25px] py-[6px] rounded-[30px] bg-yellow-light">
-              <span className="text-[15px] font-poppins"> Get Started</span>
+            <button className=" hidden md:flex items-center justify-center gap-2 px-[14px] py-[8px] rounded-[30px] bg-blue text-white">
+              <span className="text-[15px] font-poppins leading-none">
+                {" "}
+                Sign Up
+              </span>
               <AiOutlineRight className="text-[15px]" />
             </button>
 

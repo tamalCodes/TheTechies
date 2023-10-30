@@ -2,11 +2,11 @@ import { ClerkProvider } from "@clerk/nextjs";
 import "../globals.css";
 import Navbar from "components/shared/Navbar";
 import Footer from "components/shared/Footer";
-import { Poppins, Nunito_Sans } from "next/font/google";
+import { Poppins, Nunito_Sans, Montserrat } from "next/font/google";
 
 const poppins = Poppins({
   subsets: ["latin"],
-  weight: ["500", "600", "700"],
+  weight: ["400", "500", "600", "700"],
   variable: "--font-poppins",
 });
 
@@ -14,6 +14,12 @@ const nunito = Nunito_Sans({
   subsets: ["latin"],
   weight: ["500", "600", "700"],
   variable: "--font-nunito",
+});
+
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  weight: ["500", "600", "700"],
+  variable: "--font-montserrat",
 });
 
 export const metadata = {
@@ -25,7 +31,9 @@ export default function RootLayout({ children }) {
   return (
     <ClerkProvider>
       <html lang="en">
-        <body className={`${poppins.variable} ${nunito.variable} font-sans `}>
+        <body
+          className={`${poppins.variable} ${nunito.variable} ${montserrat.variable} font-sans bg-[#FDFBF9] `}
+        >
           {/* <Navbar /> */}
           {children}
           {/* <Footer /> */}

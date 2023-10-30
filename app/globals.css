@@ -7,20 +7,18 @@
 
 @layer components {
   .maxwidth_container {
-    @apply max-w-[1200px] mx-auto;
+    @apply max-w-[1100px] mx-auto;
   }
 
   /* //* Navbar Styles */
-  .navbarmain {
-    @apply flex items-center justify-between;
-  }
+
 
   .navitems_parent {
-    @apply md:flex items-center gap-4 hidden;
+    @apply md:flex items-center gap-6 hidden;
   }
 
   .navitems {
-    @apply font-poppins font-[500] text-[15px] no-underline pt-[5px];
+    @apply font-poppins font-[600] text-[15px] no-underline pt-[5px] text-black;
   }
 
   .navbardiv_right {
@@ -34,47 +32,84 @@
     @apply text-center cursor-pointer justify-center items-center gap-2.5 w-auto tracking-[1px] font-medium transition-all duration-500 ease-in-out focus:outline-offset-2 text-[15px] m-0 font-poppins;
   }
 
-  .btn > svg {
+  .btn>svg {
     @apply text-[17px] m-0;
   }
+
   .solid-btn {
     @apply border text-white transition-all duration-500 ease-in-out disabled:cursor-not-allowed disabled:opacity-60 disabled:border-solid bg-blue;
   }
+
   .outline-btn {
     @apply border text-white transition-all duration-500 ease-in-out border-solid border-yellow-light disabled:text-[black] disabled:cursor-not-allowed disabled:opacity-30 disabled:border-[black] disabled:border-solid disabled:border-[1px] bg-transparent;
   }
+
   .solid-btn:hover,
   .solid-btn:active,
   .solid-btn:focus {
     @apply text-[black] bg-white transition-all duration-500 ease-in-out border-blue border-solid border-[1px];
   }
+
   .solid-btn:disabled {
     @apply bg-blue;
   }
+
   .outline-btn:focus,
   .outline-btn:hover,
   .outline-btn:active {
     @apply bg-blue text-white transition-all duration-500 ease-in-out;
   }
+
   .btn.bold {
     @apply font-semibold;
   }
 }
 
-
+@layer utilities {
+  .avatar {
+    @apply rounded-[50%] w-[33px] h-[33px] absolute border-solid border-black border-[1px];
+  }
+}
 
 /* Clerk Responsive fix */
 .cl-organizationSwitcherTrigger .cl-userPreview .cl-userPreviewTextContainer {
   @apply max-sm:hidden;
 }
 
-.cl-organizationSwitcherTrigger
-  .cl-organizationPreview
-  .cl-organizationPreviewTextContainer {
+.cl-organizationSwitcherTrigger .cl-organizationPreview .cl-organizationPreviewTextContainer {
   @apply max-sm:hidden;
 }
 
 
-h5{
-  color: #ffffff3c;
+
+
+
+.blob1 {
+
+  position: absolute;
+  top: 22%;
+  left: 64%;
+  transform: translate(-50%, -50%);
+
+  width: 440px;
+  height: 440px;
+  border-radius: 25rem;
+  background: radial-gradient(105.68% 45.69% at 92.95% 50%, rgba(105, 244, 253, 0.5) 0%, rgba(160, 255, 244, 0.095) 53.91%, rgba(254, 216, 255, 0) 100%), radial-gradient(103.18% 103.18% at 90.11% 102.39%, #C9FFF2 0%, rgba(230, 255, 250, 0) 100%), radial-gradient(90.45% 90.45% at 87.84% 9.55%, #FFD2F5 0%, rgba(254, 219, 246, 0) 100%), linear-gradient(135.66deg, rgba(203, 185, 255, 0.8) 14.89%, rgba(216, 202, 254, 0) 74.33%);
+  background-blend-mode: multiply, overlay, saturation, darken, luminosity, screen;
+  filter: blur(100px);
+}
+
+.blob2 {
+
+  position: absolute;
+  top: 68%;
+  left: 32%;
+  transform: translate(-50%, -50%);
+
+  width: 440px;
+  height: 440px;
+  border-radius: 25rem;
+  background: radial-gradient(105.68% 45.69% at 92.95% 50%, rgba(105, 244, 253, 0.5) 0%, rgba(160, 255, 244, 0.095) 53.91%, rgba(254, 216, 255, 0) 100%), radial-gradient(103.18% 103.18% at 90.11% 102.39%, #C9FFF2 0%, rgba(230, 255, 250, 0) 100%), radial-gradient(90.45% 90.45% at 87.84% 9.55%, #FFD2F5 0%, rgba(254, 219, 246, 0) 100%), linear-gradient(135.66deg, rgba(203, 185, 255, 0.8) 14.89%, rgba(216, 202, 254, 0) 74.33%);
+  background-blend-mode: multiply, overlay, saturation, darken, luminosity, screen;
+  filter: blur(100px);
 }
