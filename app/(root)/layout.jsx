@@ -26,9 +26,9 @@ export default function RootLayout({ children }) {
     <ClerkProvider>
       <html lang="en">
         <body className={`${poppins.variable} ${nunito.variable} font-sans `}>
-          <Navbar />
+          {/* <Navbar /> */}
           {children}
-          <Footer />
+          {/* <Footer /> */}
         </body>
       </html>
     </ClerkProvider>

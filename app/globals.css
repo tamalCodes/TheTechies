@@ -12,7 +12,7 @@
 
   /* //* Navbar Styles */
   .navbarmain {
-    @apply flex justify-between items-center;
+    @apply flex items-center justify-between;
   }
 
   .navitems_parent {
@@ -31,21 +31,17 @@
 /* //* Button Custom classes */
 @layer utilities {
   .btn {
-    @apply text-center cursor-pointer justify-center items-center gap-2.5 w-auto tracking-[1px] font-medium transition-all duration-500 ease-in-out rounded-[5px] focus:outline-offset-2 text-[14px] m-0 font-poppins;
+    @apply text-center cursor-pointer justify-center items-center gap-2.5 w-auto tracking-[1px] font-medium transition-all duration-500 ease-in-out focus:outline-offset-2 text-[15px] m-0 font-poppins;
   }
 
   .btn > svg {
     @apply text-[17px] m-0;
   }
-
-  .btn:focus {
-    outline: 2px dashed blue;
-  }
   .solid-btn {
     @apply border text-white transition-all duration-500 ease-in-out disabled:cursor-not-allowed disabled:opacity-60 disabled:border-solid bg-blue;
   }
   .outline-btn {
-    @apply border text-[black] transition-all duration-500 ease-in-out border-solid border-blue disabled:text-[black] disabled:cursor-not-allowed disabled:opacity-30 disabled:border-[black] disabled:border-solid disabled:border-[1px] bg-white;
+    @apply border text-white transition-all duration-500 ease-in-out border-solid border-yellow-light disabled:text-[black] disabled:cursor-not-allowed disabled:opacity-30 disabled:border-[black] disabled:border-solid disabled:border-[1px] bg-transparent;
   }
   .solid-btn:hover,
   .solid-btn:active,
@@ -64,6 +60,8 @@
     @apply font-semibold;
   }
 }
+
+
 
 /* Clerk Responsive fix */
 .cl-organizationSwitcherTrigger .cl-userPreview .cl-userPreviewTextContainer {

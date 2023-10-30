@@ -4,11 +4,15 @@ export const navbarItems = [
     link: "/about",
   },
   {
+    name: "Discover",
+    link: "/discover",
+  },
+  {
     name: "Events",
     link: "/events",
   },
   {
-    name: "Discover",
-    link: "/discover",
+    name: "Trending",
+    link: "/trending",
   },
 ];

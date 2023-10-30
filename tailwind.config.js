@@ -11,7 +11,8 @@ module.exports = {
     extend: {
       colors: {
         "primary-500": "#877EFF",
-        "secondary-500": "#FFB620",
+        "yellow-dark": "#FFB620",
+        "yellow-light": "#FFDE59",
         blue: "#0095F6",
         "blue-2": "rgb(55,112,255)",
         "logout-btn": "#FF5A5A",
@@ -20,7 +21,7 @@ module.exports = {
         "dark-2": "#121417",
         "dark-3": "#101012",
         "dark-4": "#1F1F22",
-        "light-1": "#FFFFFF",
+        white: "#FFFFFF",
         "light-2": "#EFEFEF",
         "light-3": "#7878A3",
         "light-4": "#5C5C7B",
