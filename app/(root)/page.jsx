@@ -13,7 +13,7 @@ export default function Home() {
           width={800}
           height={800}
           alt="Hello world"
-          className="abosolute w-full h-full inset-0"
+          className="hidden md:block abosolute w-full h-full inset-0"
         />
       </div>
     </>

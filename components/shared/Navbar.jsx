@@ -17,7 +17,7 @@ function Navbar() {
             <Link href="/">
               <Image
                 src="./tekhubHorizontalLogo.svg"
-                className="w-[120px] md:w-[110px]"
+                className="w-[100px] md:w-[110px]"
                 width={100}
                 height={100}
                 alt="Navbar Branding image which reads TekHub in a red color font"
@@ -40,14 +40,14 @@ function Navbar() {
           </div>
 
           <div className="navbardiv_right">
-            <button className="flex items-center gap-2 border-solid border-yellow-light border-[1px] px-[25px] py-[6px] rounded-[30px] bg-yellow-light">
+            <button className=" hidden md:flex items-center gap-2 border-solid border-yellow-light border-[1px] px-[25px] py-[6px] rounded-[30px] bg-yellow-light">
               <span className="text-[15px] font-poppins"> Get Started</span>
               <AiOutlineRight className="text-[15px]" />
             </button>
-            <p className="md:hidden cursor-pointer text-[20px] font-bold text-[rgb(55,112,255)] font-nunito">
-              Sign In
-            </p>
-            <GiHamburgerMenu className="w-[22px] font-[500] h-[22px] text-blue-2 md:hidden " />
+
+            <div className="bg-[#ffffff3c] px-[20px] py-[8px] rounded-[20px] md:hidden ">
+              <GiHamburgerMenu className="w-[24px] font-[500] h-[24px] text-yellow-light" />
+            </div>
           </div>
         </div>
       </nav>

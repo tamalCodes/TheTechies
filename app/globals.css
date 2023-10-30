@@ -73,3 +73,8 @@
   .cl-organizationPreviewTextContainer {
   @apply max-sm:hidden;
 }
+
+
+h5{
+  color: #ffffff3c;
+}
