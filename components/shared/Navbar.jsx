@@ -31,9 +31,8 @@ function Navbar() {
           </div>
 
           <div className="flex items-center gap-2">
-            <button className=" hidden desktop:flex items-center justify-center gap-2 px-[14px] py-[8px] rounded-[30px] bg-blue text-white">
+            <button className=" hidden desktop:flex items-center justify-center gap-2 px-[14px] py-[8px] rounded-[6px] bg-blue text-white">
               <span className="text-[15px] font-poppins leading-none">
-                {" "}
                 Sign Up
               </span>
               <AiOutlineRight className="text-[15px]" />

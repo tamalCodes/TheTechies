@@ -4,78 +4,75 @@ import Image from "next/image";
 import React from "react";
 import { AiOutlineRight } from "react-icons/ai";
 
+import user1 from "public/assets/landing/user1.jpg";
+import user2 from "public/assets/landing/user2.jpg";
+import user3 from "public/assets/landing/user3.jpg";
+import user4 from "public/assets/landing/user4.jpg";
+
 const Landing = () => {
   return (
     <div className="relative px-8 flex flex-col tab:items-center">
-      <h1 className="font-montserrat font-bold text-black leading-none text-[45px] tab:text-[60px] tab:font-extrabold  tab:text-center desktop:text-[62px] desktop:w-[60%] ">
+      <h1 className="font-montserrat font-bold text-black leading-none tracking-tight text-[45px] tab:text-[60px] tab:font-extrabold tab:tracking-normal tab:text-center desktop:text-[62px] desktop:w-[70%]">
         We are the{" "}
         <span className="text-blue leading-none">best tech community</span> to
         ever {window.innerWidth > 1300 && <br />}exist.
       </h1>
 
-      <div className="flex items-center gap-2 mt-10 mb-10 desktop:mb-6">
-        <div className="relative flex w-[109px] h-[33px]">
-          <Image
-            src="https://mir-s3-cdn-cf.behance.net/project_modules/2800_opt_1/e9bae6101650903.5f2369bc9baf7.jpg"
-            width={400}
-            height={400}
-            alt="Hello world"
-            className="avatar left-0 z-[4]"
-          />
-          <Image
-            src="https://mir-s3-cdn-cf.behance.net/project_modules/2800_opt_1/baa20698931623.5ee79b6a8ec2b.jpg"
-            width={400}
-            height={400}
-            alt="Hello world"
-            className="avatar left-12 z-[2] "
-          />
-          <Image
-            src="https://mir-s3-cdn-cf.behance.net/project_modules/2800_opt_1/06fbe298931623.5ee79b6a90221.jpg"
-            width={400}
-            height={400}
-            alt="Hello world"
-            className="avatar left-6 z-[3]"
-          />
-          <Image
-            src="https://mir-s3-cdn-cf.behance.net/project_modules/2800_opt_1/d07bca98931623.5ee79b6a8fa55.jpg"
-            width={400}
-            height={400}
-            alt="Hello world"
-            className="avatar  left-[75px]"
-          />
-        </div>
-
-        <div className=" h-[46px] border-l-[3px] border-l-blue border-solid;"></div>
-
-        <div className="flex flex-col font-poppins text-black">
-          <span className="font-bold opacity-85 text-[16px] tab:text-19px]">
-            1000+
-          </span>
-          <span className="text-[16px] tab:text-[17px] m-0 leading-none font-medium opacity-85">
-            Techies connected
-          </span>
-          <span className="text-[16px] tab:text-[17px] m-0 leading-none font-medium opacity-85">
-            by TekHub
-          </span>
-        </div>
-      </div>
-
-      <p className="font-poppins text-black  leading-tight text-[17px] tab:text-[19px] font-normal mb-9 tab:w-[70%] tab:text-center desktop:w-[40%]">
+      <p className="font-poppins text-black  leading-tight text-[17px] tab:text-[19px] font-normal mt-9 mb-9 tab:w-[70%] tab:text-center desktop:w-[50%] desktop:text-[16px]">
         A place to find the best tech resources, groups and tech enthusiasts.{" "}
-        {/* <br className="hidden desktop:block" /> */}
         Build projects, collaborate, host events and much more.
       </p>
 
-      <button className=" flex items-center justify-center gap-2 py-3 rounded-[30px] bg-blue text-white w-[200px] tab:w-auto tab:px-5">
-        <span className="hidden tab:block text-[18px] font-poppins leading-none">
-          Sign Up, Join the community today
-        </span>
+      <div className="flex items-center gap-5">
+        <button className=" flex items-center justify-center gap-2 py-3 rounded-[6px] bg-blue text-white w-[200px] tab:w-auto tab:px-7">
+          <span className="hidden tab:block text-[16px] font-poppins leading-none font-medium">
+            Intrested? Sign Up
+          </span>
+          <span className="tab:hidden block text-[16px] font-poppins leading-none font-medium">
+            Sign Up
+          </span>
+          <AiOutlineRight className="text-[16px] font-bold" />
+        </button>
 
-        <span className=" tab:hidden text-[15px] font-poppins leading-none font-medium">
-          Sign Up Today
-        </span>
-        <AiOutlineRight className="text-[18px] font-bold" />
-      </button>
+        <div className=" h-[46px] border-l-[3px] border-l-blue border-solid;"></div>
+
+        <div className="flex flex-col gap-2 ">
+          <div className="relative flex w-[109px] h-[33px]">
+            <Image
+              src={user1}
+              width={400}
+              height={400}
+              alt="Hello world"
+              className="avatar left-0 z-[4]"
+            />
+            <Image
+              src={user2}
+              width={400}
+              height={400}
+              alt="Hello world"
+              className="avatar left-12 z-[2] "
+            />
+            <Image
+              src={user3}
+              width={400}
+              height={400}
+              alt="Hello world"
+              className="avatar left-6 z-[3]"
+            />
+            <Image
+              src={user4}
+              width={400}
+              height={400}
+              alt="Hello world"
+              className="avatar  left-[75px]"
+            />
+          </div>
+
+          <p className="font-poppins text-black text-[14px] m-0 leading-none  opacity-85">
+            Trusted by over <span className="font-semibold">1000+</span> techies
+          </p>
+        </div>
+      </div>
     </div>
   );
 };
