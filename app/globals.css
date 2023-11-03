@@ -7,6 +7,7 @@
 
 body {
   cursor: url("/assets/cursor.svg"), auto !important;
+
 }
 
 @layer components {
@@ -17,17 +18,7 @@ body {
   /* //* Navbar Styles */
 
 
-  .navitems_parent {
-    @apply md:flex items-center gap-6 hidden;
-  }
 
-  .navitems {
-    @apply font-poppins font-[600] text-[15px] no-underline pt-[5px] text-black;
-  }
-
-  .navbardiv_right {
-    @apply flex items-center gap-2;
-  }
 }
 
 /* //* Button Custom classes */

@@ -22,7 +22,10 @@ module.exports = {
         "groups-sidebar": "-30px 0px 60px 0px rgba(28, 28, 31, 0.50)",
       },
       screens: {
-        xs: "400px",
+        xs: "500px",
+        md: "1020px",
+        tab: "700px",
+        desktop: "1000px",
       },
       keyframes: {
         "accordion-down": {
