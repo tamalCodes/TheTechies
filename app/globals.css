@@ -10,15 +10,10 @@ body {
 
 }
 
-@layer components {
-  .maxwidth_container {
-    @apply max-w-[1100px] mx-auto;
+@layer utilities {
+  .default-text {
+    @apply text-black font-poppins font-normal;
   }
-
-  /* //* Navbar Styles */
-
-
-
 }
 
 /* //* Button Custom classes */
@@ -58,22 +53,31 @@ body {
   .btn.bold {
     @apply font-semibold;
   }
-}
 
-@layer utilities {
   .avatar {
     @apply rounded-[50%] w-[33px] h-[33px] absolute border-solid border-black border-[1px];
   }
+
+  /* Auth Page */
+
+  .auth_label {
+    @apply text-[16px] font-medium font-poppins;
+
+  }
+
+  .auth_input {
+    @apply text-[16px] font-normal font-poppins border-solid border-[1px] border-white-dark rounded-[8px] w-[100%] h-[40px] px-[10px] py-[5px] outline-none focus:outline-none focus:border-blue mt-1 bg-transparent;
+  }
+
+  .auth_input::placeholder {
+    @apply text-[15px] font-normal font-poppins;
+  }
+
 }
 
-/* Clerk Responsive fix */
-.cl-organizationSwitcherTrigger .cl-userPreview .cl-userPreviewTextContainer {
-  @apply max-sm:hidden;
-}
 
-.cl-organizationSwitcherTrigger .cl-organizationPreview .cl-organizationPreviewTextContainer {
-  @apply max-sm:hidden;
-}
+
+
 
 
 

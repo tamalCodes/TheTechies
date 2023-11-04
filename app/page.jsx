@@ -1,7 +1,4 @@
-import { UserButton } from "@clerk/nextjs";
-import Image from "next/image";
 import Navbar from "components/shared/Navbar";
-import Footer from "components/shared/Footer";
 import Landing from "components/private/Landing";
 
 export default function Home() {

@@ -12,7 +12,7 @@ import user4 from "public/assets/landing/user4.jpg";
 const Landing = () => {
   return (
     <div className="relative px-8 flex flex-col tab:items-center">
-      <h1 className="font-montserrat font-bold text-black leading-none tracking-tight text-[45px] tab:text-[60px] tab:font-extrabold tab:tracking-normal tab:text-center desktop:text-[62px] desktop:w-[70%]">
+      <h1 className=" font-bold text-black leading-none tracking-tight text-[45px] tab:text-[60px] tab:font-black tab:tracking-normal tab:text-center desktop:text-[62px] desktop:w-[70%]">
         We are the{" "}
         <span className="text-blue leading-none">best tech community</span> to
         ever {window.innerWidth > 1300 && <br />}exist.
