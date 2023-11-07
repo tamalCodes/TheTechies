@@ -112,3 +112,11 @@ body {
   background-blend-mode: multiply, overlay, saturation, darken, luminosity, screen;
   filter: blur(100px);
 }
+
+.authpage_banner {
+  background: rgba(54, 114, 255, 0.363);
+  backdrop-filter: blur(11px);
+  -webkit-backdrop-filter: blur(11px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
