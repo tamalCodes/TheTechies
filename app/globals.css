@@ -112,9 +112,3 @@ body {
   background-blend-mode: multiply, overlay, saturation, darken, luminosity, screen;
   filter: blur(100px);
 }
-
-.authpage_banner {
-  background-color: #312F2F;
-}
-
-/* 312F2F */

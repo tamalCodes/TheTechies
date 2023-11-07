@@ -31,12 +31,14 @@ function Navbar() {
           </div>
 
           <div className="flex items-center gap-2">
-            <button className=" hidden desktop:flex items-center justify-center gap-2 px-[14px] py-[8px] rounded-[6px] bg-blue text-white">
-              <span className="text-[15px] font-poppins leading-none">
-                Sign Up
-              </span>
-              <AiOutlineRight className="text-[15px]" />
-            </button>
+            <Link href={"/signup"}>
+              <button className=" hidden desktop:flex items-center justify-center gap-2 px-[14px] py-[8px] rounded-[6px] bg-blue text-white">
+                <span className="text-[15px] font-poppins leading-none">
+                  Sign Up
+                </span>
+                <AiOutlineRight className="text-[15px]" />
+              </button>
+            </Link>
 
             <div className="bg-[#ffffff3c] px-[20px] py-[8px] rounded-[20px] desktop:hidden ">
               <GiHamburgerMenu className="w-[24px] font-[500] h-[24px] text-blue" />

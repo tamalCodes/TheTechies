@@ -1,7 +1,5 @@
-import AuthHeader from "components/shared/auth/AuthHeader";
 import Link from "next/link";
 import Image from "next/image";
-import AuthBanner from "public/assets/auth/AuthBanner.svg";
 import { FcGoogle } from "react-icons/fc";
 
 import donut from "public/assets/auth/donut.png";
