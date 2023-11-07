@@ -114,9 +114,7 @@ body {
 }
 
 .authpage_banner {
-  background: rgba(54, 114, 255, 0.363);
-  backdrop-filter: blur(11px);
-  -webkit-backdrop-filter: blur(11px);
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  background-color: #312F2F;
 }
+
+/* 312F2F */
