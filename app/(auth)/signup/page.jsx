@@ -1,10 +1,10 @@
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
 import { FcGoogle } from "react-icons/fc";
 
-import donut from "public/assets/auth/donut.png";
-import EllipseBottom from "public/assets/auth/EllipseBottom.png";
-import EllipseTop from "public/assets/auth/EllipseTop.png";
+import donut from "public/assets/auth/donut.webp";
+import EllipseBottom from "public/assets/auth/EllipseBottom.webp";
+import EllipseTop from "public/assets/auth/EllipseTop.webp";
 
 export default function SignUp() {
   return (
@@ -124,7 +124,7 @@ export default function SignUp() {
             />
           </div>
 
-          <h1 className="absolute bottom-[50px] left-[50px] z-4 font-poppins font-bold text-white opacity-90 text-4xl">
+          <h1 className="absolute bottom-[50px] left-[50px] z-4 font-poppins font-bold text-white opacity-80 text-3xl">
             The best tech <br />
             community ever.
           </h1>

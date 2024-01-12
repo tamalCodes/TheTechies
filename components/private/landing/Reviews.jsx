@@ -1,9 +1,9 @@
 import Image from "next/image";
 
-import user1 from "public/assets/landing/user1.jpg";
-import user2 from "public/assets/landing/user2.jpg";
-import user3 from "public/assets/landing/user3.jpg";
-import user4 from "public/assets/landing/user4.jpg";
+import user1 from "public/assets/landing/user1.webp";
+import user2 from "public/assets/landing/user2.webp";
+import user3 from "public/assets/landing/user3.webp";
+import user4 from "public/assets/landing/user4.webp";
 
 export default function Reviews() {
   return (
@@ -42,7 +42,7 @@ export default function Reviews() {
 
         <div className="h-[46px] border-l-[3px] border-l-blue border-solid tab:hidden"></div>
 
-        <p className="font-poppins text-black text-[14px] m-0 leading-none  opacity-85">
+        <p className="font-poppins text-black text-[16px] font-normal m-0 leading-none">
           Trusted by over <br className="tab:hidden" />
           <span className="font-semibold">1000+</span> techies
         </p>

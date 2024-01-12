@@ -1,10 +1,10 @@
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
 import { FcGoogle } from "react-icons/fc";
 
-import donut from "public/assets/auth/donut.png";
-import EllipseBottom from "public/assets/auth/EllipseBottom.png";
-import EllipseTop from "public/assets/auth/EllipseTop.png";
+import donut from "public/assets/auth/donut.webp";
+import EllipseBottom from "public/assets/auth/EllipseBottom.webp";
+import EllipseTop from "public/assets/auth/EllipseTop.webp";
 
 export default function SignIn() {
   return (
