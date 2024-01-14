@@ -1,8 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import React from "react";
-import { AiOutlineRight } from "react-icons/ai";
 import Reviews from "./landing/Reviews";
 
 const Landing = () => {
@@ -32,7 +30,7 @@ const Landing = () => {
             <span className="tab:hidden block text-[16px] font-poppins leading-none font-medium">
               Sign Up
             </span>
-            <AiOutlineRight className="text-[16px] font-bold" />
+            {/* <AiOutlineRight className="text-[16px] font-bold" /> */}
           </button>
         </Link>
       </div>

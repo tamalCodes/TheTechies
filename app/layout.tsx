@@ -1,5 +1,8 @@
-import { Montserrat, Nunito_Sans, Poppins } from "next/font/google";
+import type { Metadata } from "next";
+import { Inter, Montserrat, Nunito_Sans, Poppins } from "next/font/google";
 import "./globals.css";
+
+const inter = Inter({ subsets: ["latin"] });
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -19,12 +22,16 @@ const montserrat = Montserrat({
   variable: "--font-montserrat",
 });
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "The Techies",
   description: "The best tech community ever.",
 };
 
-export default function RootLayout({ children }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en">
       <body

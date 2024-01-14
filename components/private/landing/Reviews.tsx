@@ -1,9 +1,8 @@
+import user1 from "@/public/assets/landing/user1.webp";
+import user2 from "@/public/assets/landing/user2.webp";
+import user3 from "@/public/assets/landing/user3.webp";
+import user4 from "@/public/assets/landing/user4.webp";
 import Image from "next/image";
-
-import user1 from "public/assets/landing/user1.webp";
-import user2 from "public/assets/landing/user2.webp";
-import user3 from "public/assets/landing/user3.webp";
-import user4 from "public/assets/landing/user4.webp";
 
 export default function Reviews() {
   return (
