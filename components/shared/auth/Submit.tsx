@@ -1,12 +1,23 @@
 "use client";
 
+import createSupabaseServerClient from "@/lib/supabase/client";
 import Link from "next/link";
 import { FcGoogle } from "react-icons/fc";
 
 const Submit: React.FC<{ to: string; parent: string }> = ({ to, parent }) => {
+  const supabase = createSupabaseServerClient();
+  const handleGoogle = async () => {
+    await supabase.auth.signInWithOAuth({
+      provider: "google",
+      options: {
+        redirectTo: `${location.origin}/auth/callback`,
+      },
+    });
+  };
+
   return (
     <div>
-      <button className=" bg-black rounded-[8px] text-[16px] px-8 py-2 text-white font-poppins tracking-[1px] font-medium mt-8 w-full">
+      <button className=" bg-blue rounded-[8px] text-[16px] px-8 py-2 text-white font-poppins tracking-[1px] font-medium mt-8 w-full">
         Sign {parent === "signup" ? "Up" : "In"}
       </button>
 
@@ -19,10 +30,14 @@ const Submit: React.FC<{ to: string; parent: string }> = ({ to, parent }) => {
       </div>
 
       <button
-        type="submit"
-        className=" rounded-[8px] text-[16px] px-8 py-2 font-poppins tracking-[1px] font-medium mt-1 w-full border-solid border-[1px] border-black text-black flex items-center justify-center gap-2"
+        className="rounded-[8px] text-[16px] desktop:px-8 py-2 font-poppins tracking-[1px] font-medium mt-1 w-full border-solid border-[1px] border-black text-black flex items-center justify-center gap-2"
+        onClick={(e) => {
+          e.preventDefault();
+          handleGoogle();
+        }}
       >
-        <FcGoogle className="text-[21px]" /> Continue with Google
+        <FcGoogle className="text-[21px]" />{" "}
+        <span className="leading-[1]">Continue with Google</span>
       </button>
 
       <div className="font-poppins flex gap-3 items-center justify-center mt-7 text-[16px]">

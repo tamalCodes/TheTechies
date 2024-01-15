@@ -1,5 +1,6 @@
 "use client";
 
+import checkAuthCookies from "@/lib/cookies/checkAuthCookies";
 import signOut from "@/lib/supabase/signOut";
 import readUserSessionInClient from "@/lib/supabase/userSessionClient";
 import brand from "@/public/assets/Navbar/brand.svg";
@@ -17,7 +18,12 @@ function Navbar() {
 
   useEffect(() => {
     async function fetchUserSession() {
+      const isOAuthInitiated = await checkAuthCookies({
+        name: "oauth_initiated",
+      });
+
       try {
+        if (isOAuthInitiated) toast.success("Logged in");
         const { data } = await readUserSessionInClient();
         setIsUserLoggedIn(!!data?.session);
       } catch (error) {

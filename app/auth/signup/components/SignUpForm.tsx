@@ -44,7 +44,7 @@ const SignUpForm = () => {
   return (
     <>
       <Toaster toastOptions={ToastStyle} />
-      <div className="formbg relative p-6 w-[850px]">
+      <div className="md:formbg relative p-6 w-[88vw] desktop:w-[850px]">
         <div className="flex gap-4 rounded-[12px] justify-around items-center ">
           <div className="">
             <h1 className="font-poppins text-[1.8rem] font-bold text-black">
@@ -123,7 +123,13 @@ const SignUpForm = () => {
           </div>
 
           <div>
-            <Image src={Side} width={400} height={400} alt="side" />
+            <Image
+              src={Side}
+              width={400}
+              height={400}
+              alt="side"
+              className="hidden desktop:block"
+            />
           </div>
         </div>
       </div>
