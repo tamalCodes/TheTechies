@@ -22,10 +22,11 @@ const Landing = () => {
 
         <div className="hidden h-[46px] border-l-[3px] border-l-blue border-solid tab:block"></div>
 
-        <Link href={"/signup"}>
+        <Link href={"/auth/signup"}>
           <button className=" flex items-center justify-center gap-2 py-3 rounded-[6px] bg-blue text-white w-[200px] tab:w-auto tab:px-7">
             <span className="hidden tab:block text-[16px] font-poppins leading-none font-medium">
-              Intrested? Sign Up
+              {/* Intrested? Sign Up */}
+              Check Protection
             </span>
             <span className="tab:hidden block text-[16px] font-poppins leading-none font-medium">
               Sign Up

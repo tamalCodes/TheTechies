@@ -1,19 +1,11 @@
 import type { Metadata } from "next";
-import { Inter, Montserrat, Nunito_Sans, Poppins } from "next/font/google";
+import { Montserrat, Poppins } from "next/font/google";
 import "./globals.css";
-
-const inter = Inter({ subsets: ["latin"] });
 
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800"],
   variable: "--font-poppins",
-});
-
-const nunito = Nunito_Sans({
-  subsets: ["latin"],
-  weight: ["500", "600", "700"],
-  variable: "--font-nunito",
 });
 
 const montserrat = Montserrat({
@@ -35,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${poppins.variable} ${nunito.variable} ${montserrat.variable} font-sans bg-[#FDFBF9] `}
+        className={`${poppins.variable} ${montserrat.variable} font-sans bg-[#FDFBF9] `}
       >
         {children}
       </body>

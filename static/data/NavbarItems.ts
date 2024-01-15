@@ -1,4 +1,4 @@
-import NavbarItem from "./interface/NavbarItems";
+import NavbarItem from "../interface/NavbarItemsInterface";
 
 const NavbarItems: NavbarItem[] = [
   {

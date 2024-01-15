@@ -29,7 +29,6 @@ const config: Config = {
       },
       fontFamily: {
         poppins: ["var(--font-poppins)"],
-        nunito: ["var(--font-nunito)"],
         montserrat: ["var(--font-montserrat)"],
       },
     },

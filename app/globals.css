@@ -66,15 +66,32 @@ body {
   }
 
   .auth_input {
-    @apply text-[16px] font-normal font-poppins border-solid border-[1px] border-white-dark rounded-[8px] w-[100%] h-[40px] px-[10px] py-[5px] outline-none focus:outline-none focus:border-blue mt-1 bg-transparent;
+    @apply text-[16px] font-normal font-poppins border-solid border-[1px] border-white-dark rounded-[8px] w-[100%] h-[40px] px-[10px] py-[5px] outline-none focus:outline-none focus:border-blue mt-1 bg-transparent text-black;
   }
 
   .auth_input::placeholder {
     @apply text-[15px] font-normal font-poppins;
   }
 
+
+
+
+
 }
 
+/* Change Autocomplete styles in Chrome*/
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus input:-webkit-autofill,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+
+  -webkit-text-fill-color: rgb(20 20 21 / 1);
+
+}
 
 .blob1,
 .blob2 {
