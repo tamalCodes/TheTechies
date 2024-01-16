@@ -1,6 +1,6 @@
 export interface UserDetails {
   id: string;
-  fullname: string;
-  avatar: string;
+  full_name: string;
+  avatar_url: string;
   username?: string;
 }

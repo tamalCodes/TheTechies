@@ -13,7 +13,7 @@ import { signUpWithEmailAndPassword } from "../../actions";
 
 const SignUpForm = () => {
   const [credentials, setCredentials] = useState({
-    fullname: "",
+    full_name: "",
     email: "",
     password: "",
   });
@@ -58,16 +58,16 @@ const SignUpForm = () => {
               }}
             >
               <div>
-                <label htmlFor="fullname" className="auth_label">
+                <label htmlFor="full_name" className="auth_label">
                   Full Name
                 </label>
                 <input
                   type="text"
-                  name="fullname"
-                  id="fullname"
+                  name="full_name"
+                  id="full_name"
                   placeholder="John Doe"
                   className="auth_input"
-                  value={credentials.fullname}
+                  value={credentials.full_name}
                   onChange={handleChange}
                 />
               </div>

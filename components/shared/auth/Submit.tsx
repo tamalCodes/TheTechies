@@ -10,7 +10,7 @@ const Submit: React.FC<{ to: string; parent: string }> = ({ to, parent }) => {
     await supabase.auth.signInWithOAuth({
       provider: "google",
       options: {
-        redirectTo: `${location.origin}/auth/callback`,
+        redirectTo: location.origin + "/auth/callback",
       },
     });
   };

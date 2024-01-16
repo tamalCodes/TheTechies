@@ -5,7 +5,7 @@ import createSupabaseServerClient from "@/lib/supabase/server";
 export async function signUpWithEmailAndPassword(data: {
   email: string;
   password: string;
-  fullname?: string;
+  full_name?: string;
 }) {
   const supabase = await createSupabaseServerClient();
   const result = await supabase.auth.signUp({
@@ -13,7 +13,8 @@ export async function signUpWithEmailAndPassword(data: {
     password: data.password,
     options: {
       data: {
-        fullname: data.fullname,
+        full_name: data.full_name,
+        username: data.email.split("@")[0],
       },
     },
   });
