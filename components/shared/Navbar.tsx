@@ -1,6 +1,6 @@
 "use client";
 
-import checkAuthCookies from "@/lib/cookies/checkAuthCookies";
+import { deleteAuthCookies, getAuthCookies } from "@/lib/cookies/authCookies";
 import signOut from "@/lib/supabase/signOut";
 import readUserSessionInClient from "@/lib/supabase/userSessionClient";
 import brand from "@/public/assets/Navbar/brand.svg";
@@ -8,6 +8,7 @@ import NavbarItems from "@/static/data/NavbarItems";
 import ToastStyle from "@/static/data/ToastStyle";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import { AiOutlineRight } from "react-icons/ai";
@@ -15,22 +16,28 @@ import { GiHamburgerMenu } from "react-icons/gi";
 
 function Navbar() {
   const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
+  const router = useRouter();
+
+  async function checkOAuth() {
+    const cookies = await getAuthCookies();
+
+    if (cookies) {
+      toast.success("Logged in");
+      deleteAuthCookies();
+    }
+  }
+
+  async function fetchUserSession() {
+    try {
+      checkOAuth();
+      const { data } = await readUserSessionInClient();
+      setIsUserLoggedIn(!!data?.session);
+    } catch (error) {
+      console.error("Error fetching user session:", error);
+    }
+  }
 
   useEffect(() => {
-    async function fetchUserSession() {
-      const isOAuthInitiated = await checkAuthCookies({
-        name: "oauth_initiated",
-      });
-
-      try {
-        if (isOAuthInitiated) toast.success("Logged in");
-        const { data } = await readUserSessionInClient();
-        setIsUserLoggedIn(!!data?.session);
-      } catch (error) {
-        console.error("Error fetching user session:", error);
-      }
-    }
-
     fetchUserSession();
   }, []);
 
@@ -66,6 +73,7 @@ function Navbar() {
                     signOut();
                     toast.success("Logged out");
                     setIsUserLoggedIn(false);
+                    router.push("/");
                   }}
                 >
                   Logout
