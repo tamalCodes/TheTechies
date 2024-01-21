@@ -29,8 +29,9 @@ function Navbar() {
 
   async function fetchUserSession() {
     try {
-      checkOAuth();
+      // checkOAuth();
       const { data } = await readUserSessionInClient();
+      console.log(data);
       setIsUserLoggedIn(!!data?.session);
     } catch (error) {
       console.error("Error fetching user session:", error);

@@ -31,6 +31,8 @@ export async function GET(request: Request) {
     const { error } = await supabase.auth.exchangeCodeForSession(code);
     if (!error) {
       setCookies({ name: "oauth_initiated", value: "true" });
+      console.log(`${origin}${next}`);
+
       return NextResponse.redirect(`${origin}${next}`);
     }
   }

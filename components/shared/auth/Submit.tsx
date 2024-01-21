@@ -5,7 +5,10 @@ import createSupabaseServerClient from "@/lib/supabase/client";
 import Link from "next/link";
 import { FcGoogle } from "react-icons/fc";
 
-const Submit: React.FC<{ to: string; parent: string }> = ({ to, parent }) => {
+const Submit: React.FC<{
+  to: string;
+  parent: string;
+}> = ({ to, parent }) => {
   // Creating supabase client (frontend side) and then using it to sign in with google
   // after signing in with google, it will redirect to the url that is passed in the options
 

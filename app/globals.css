@@ -60,12 +60,12 @@ body {
 
   /* Auth Page */
 
-  .auth_label {
+  .label {
     @apply text-[16px] font-medium font-poppins;
 
   }
 
-  .auth_input {
+  .input {
     @apply text-[16px] font-normal font-poppins border-solid border-[1px] md:border-white-dark border-gray-700 rounded-[8px] w-[100%] h-[40px] px-[10px] py-[5px] outline-none focus:outline-none focus:border-blue mt-1 bg-transparent text-black;
   }
 

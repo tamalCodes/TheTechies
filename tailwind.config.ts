@@ -30,6 +30,7 @@ const config: Config = {
       fontFamily: {
         poppins: ["var(--font-poppins)"],
         montserrat: ["var(--font-montserrat)"],
+        outfit: ["var(--font-outfit)"],
       },
     },
   },

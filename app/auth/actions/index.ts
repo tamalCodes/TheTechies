@@ -1,26 +1,32 @@
 "use server";
 
+import { action } from "@/lib/SafeAction";
 import createSupabaseServerClient from "@/lib/supabase/server";
 
-export async function signUpWithEmailAndPassword(data: {
-  email: string;
-  password: string;
-  full_name?: string;
-}) {
-  const supabase = await createSupabaseServerClient();
-  const result = await supabase.auth.signUp({
-    email: data.email,
-    password: data.password,
-    options: {
-      data: {
-        full_name: data.full_name,
-        username: data.email.split("@")[0],
-      },
-    },
-  });
+import { z } from "zod";
 
-  return JSON.stringify(result);
-}
+const authSchema = z.object({
+  email: z.string().email(),
+  password: z.string().min(8),
+  full_name: z.string().min(5),
+});
+
+export const signUpWithEmailAndPassword = action(
+  authSchema,
+  async ({ email, password, full_name }) => {
+    const supabase = await createSupabaseServerClient();
+    await supabase.auth.signUp({
+      email: email,
+      password: password,
+      options: {
+        data: {
+          full_name: full_name,
+          username: email?.toString().split("@")[0],
+        },
+      },
+    });
+  }
+);
 
 export async function signInWithEmailAndPassword(data: {
   email: string;
@@ -32,5 +38,5 @@ export async function signInWithEmailAndPassword(data: {
     password: data.password,
   });
 
-  return JSON.stringify(result);
+  // return JSON.stringify(result);
 }

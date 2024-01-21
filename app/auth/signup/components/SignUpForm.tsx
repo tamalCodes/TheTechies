@@ -1,45 +1,56 @@
 "use client";
 
-import Submit from "@/components/shared/auth/Submit";
 import Side from "@/public/assets/auth/side.png";
 import Image from "next/image";
-import { useState } from "react";
 
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/shared/Form";
+import { Input } from "@/components/shared/Input";
+import Submit from "@/components/shared/auth/Submit";
+import { formSchema } from "@/lib/FormSchema";
 import ToastStyle from "@/static/data/ToastStyle";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useAction } from "next-safe-action/hooks";
 import { useRouter } from "next/navigation";
-import toast, { Toaster } from "react-hot-toast";
+import { useState } from "react";
+import { useForm } from "react-hook-form";
+import { Toaster, toast } from "react-hot-toast";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
+import * as z from "zod";
 import { signUpWithEmailAndPassword } from "../../actions";
 
 const SignUpForm = () => {
-  const [credentials, setCredentials] = useState({
-    full_name: "",
-    email: "",
-    password: "",
-  });
-
-  const router = useRouter();
   const [seePassword, setSeePassword] = useState(false);
+  const router = useRouter();
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setCredentials({ ...credentials, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const res = await signUpWithEmailAndPassword(credentials);
-    const { error } = JSON.parse(res);
-
-    if (error?.message) {
-      toast.error(error.message);
-    } else {
-      toast.success("Logged in");
-
+  const { execute, result, status } = useAction(signUpWithEmailAndPassword, {
+    onSuccess: () => {
+      console.log("success");
+      toast.success("Signed up");
       setTimeout(() => {
         router.push("/");
-      }, 700);
-    }
-  };
+      }, 800);
+    },
+  });
+
+  const form = useForm<z.infer<typeof formSchema>>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      email: "",
+      full_name: "",
+      password: "",
+    },
+  });
+
+  function onSubmit(values: z.infer<typeof formSchema>) {
+    execute(values);
+  }
 
   return (
     <>
@@ -47,79 +58,79 @@ const SignUpForm = () => {
       <div className="md:formbg relative p-6 w-[88vw] desktop:w-[850px]">
         <div className="flex gap-4 rounded-[12px] justify-around items-center ">
           <div className="">
-            <h1 className="font-poppins text-[1.8rem] font-bold text-black">
+            <h1 className="font-poppins text-[1.8rem] font-bold text-black mb-4">
               Sign Up
             </h1>
-            <form
-              action="submit"
-              className="flex flex-col gap-5 mt-4"
-              onSubmit={(e) => {
-                handleSubmit(e);
-              }}
-            >
-              <div>
-                <label htmlFor="full_name" className="auth_label">
-                  Full Name
-                </label>
-                <input
-                  type="text"
+
+            <Form {...form}>
+              <form
+                onSubmit={form.handleSubmit(onSubmit)}
+                className="space-y-4"
+              >
+                <FormField
+                  control={form.control}
                   name="full_name"
-                  id="full_name"
-                  placeholder="John Doe"
-                  className="auth_input"
-                  value={credentials.full_name}
-                  onChange={handleChange}
-                />
-              </div>
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Full Name</FormLabel>
+                      <FormControl>
+                        <Input placeholder="John Doe" {...field} />
+                      </FormControl>
 
-              <div>
-                <label htmlFor="email" className="auth_label">
-                  Email Address
-                </label>
-                <input
-                  type="email"
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={form.control}
                   name="email"
-                  id="email"
-                  placeholder="johndoe@email.com"
-                  className="auth_input"
-                  value={credentials.email}
-                  onChange={handleChange}
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Email Address</FormLabel>
+                      <FormControl>
+                        <Input placeholder="johndoe@gmail.com" {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
                 />
-              </div>
-
-              <div className="relative">
-                <label htmlFor="password" className="auth_label">
-                  Password
-                </label>
-                <input
-                  type={seePassword ? "text" : "password"}
+                <FormField
+                  control={form.control}
                   name="password"
-                  id="password"
-                  placeholder="*********"
-                  className="auth_input"
-                  value={credentials.password}
-                  onChange={handleChange}
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Password</FormLabel>
+                      <div className="relative">
+                        <FormControl>
+                          <Input
+                            placeholder="*********"
+                            {...field}
+                            type={seePassword ? "text" : "password"}
+                          />
+                        </FormControl>
+                        {seePassword ? (
+                          <FaRegEye
+                            className="absolute top-[13px] right-[10px] text-[#00000082] text-[20px] cursor-pointer select-none"
+                            onClick={() => {
+                              setSeePassword(!seePassword);
+                            }}
+                          />
+                        ) : (
+                          <FaRegEyeSlash
+                            className="absolute top-[13px] right-[10px] text-[#00000082] text-[20px] cursor-pointer select-none"
+                            onClick={() => {
+                              setSeePassword(!seePassword);
+                            }}
+                          />
+                        )}
+                      </div>
+                      <FormMessage />
+                    </FormItem>
+                  )}
                 />
-
-                {seePassword ? (
-                  <FaRegEye
-                    className="absolute top-[39px] right-[10px] text-[#00000082] text-[20px] cursor-pointer select-none"
-                    onClick={() => {
-                      setSeePassword(!seePassword);
-                    }}
-                  />
-                ) : (
-                  <FaRegEyeSlash
-                    className="absolute top-[39px] right-[10px] text-[#00000082] text-[20px] cursor-pointer select-none"
-                    onClick={() => {
-                      setSeePassword(!seePassword);
-                    }}
-                  />
-                )}
-              </div>
-
-              <Submit to="/auth/signin" parent="signup" />
-            </form>
+                <Submit to="/auth/signin" parent="signup" />
+              </form>
+            </Form>
           </div>
 
           <div>
