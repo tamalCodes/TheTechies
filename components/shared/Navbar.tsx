@@ -1,6 +1,5 @@
 "use client";
 
-import { deleteAuthCookies, getAuthCookies } from "@/lib/cookies/authCookies";
 import signOut from "@/lib/supabase/signOut";
 import readUserSessionInClient from "@/lib/supabase/userSessionClient";
 import brand from "@/public/assets/Navbar/brand.svg";
@@ -18,20 +17,9 @@ function Navbar() {
   const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
   const router = useRouter();
 
-  async function checkOAuth() {
-    const cookies = await getAuthCookies();
-
-    if (cookies) {
-      toast.success("Logged in");
-      deleteAuthCookies();
-    }
-  }
-
   async function fetchUserSession() {
     try {
-      // checkOAuth();
       const { data } = await readUserSessionInClient();
-      console.log(data);
       setIsUserLoggedIn(!!data?.session);
     } catch (error) {
       console.error("Error fetching user session:", error);

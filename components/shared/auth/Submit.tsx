@@ -8,7 +8,8 @@ import { FcGoogle } from "react-icons/fc";
 const Submit: React.FC<{
   to: string;
   parent: string;
-}> = ({ to, parent }) => {
+  status: string;
+}> = ({ to, parent, status }) => {
   // Creating supabase client (frontend side) and then using it to sign in with google
   // after signing in with google, it will redirect to the url that is passed in the options
 
@@ -38,6 +39,7 @@ const Submit: React.FC<{
 
       <button
         className="rounded-[8px] text-[16px] desktop:px-8 py-2 font-poppins tracking-[1px] font-medium mt-1 w-full border-solid border-[1px] border-black text-black flex items-center justify-center gap-2"
+        disabled={status === "executing" && true}
         onClick={(e) => {
           e.preventDefault();
           handleGoogle();

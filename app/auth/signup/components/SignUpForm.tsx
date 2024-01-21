@@ -31,11 +31,14 @@ const SignUpForm = () => {
 
   const { execute, result, status } = useAction(signUpWithEmailAndPassword, {
     onSuccess: () => {
-      console.log("success");
       toast.success("Signed up");
       setTimeout(() => {
         router.push("/");
       }, 800);
+    },
+
+    onError: (error) => {
+      console.log(error);
     },
   });
 
@@ -128,7 +131,7 @@ const SignUpForm = () => {
                     </FormItem>
                   )}
                 />
-                <Submit to="/auth/signin" parent="signup" />
+                <Submit to="/auth/signin" parent="signup" status={status} />
               </form>
             </Form>
           </div>
