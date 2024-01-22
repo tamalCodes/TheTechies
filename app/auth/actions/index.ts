@@ -1,6 +1,6 @@
 "use server";
 
-import { action } from "@/lib/SafeAction";
+import { ActionError, action } from "@/lib/SafeAction";
 import createSupabaseServerClient from "@/lib/supabase/server";
 
 import { z } from "zod";
@@ -42,6 +42,8 @@ export const signInWithEmailAndPassword = action(
       password: password,
     });
 
-    console.log(result);
+    if (result.error) {
+      throw new ActionError(result.error.message);
+    }
   }
 );

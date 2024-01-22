@@ -7,7 +7,6 @@ export async function middleware(request: NextRequest) {
   const { data } = await readUserSessionInServer();
 
   if (data?.session) {
-    console.log("Protected route");
     return NextResponse.redirect(new URL("/", request.nextUrl));
   }
 }

@@ -39,7 +39,10 @@ const SignInForm = () => {
     },
 
     onError: (error) => {
-      console.log(error);
+      const serverError = error?.serverError;
+      const errorMessage =
+        typeof serverError === "string" ? serverError : "An error occurred";
+      toast.error(errorMessage);
     },
   });
 
@@ -52,7 +55,6 @@ const SignInForm = () => {
   });
 
   function onSubmit(values: z.infer<typeof formSchemaSignIn>) {
-    console.log("Submitted");
     execute(values);
   }
 

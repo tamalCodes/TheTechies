@@ -12,6 +12,7 @@ import { useEffect, useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import { AiOutlineRight } from "react-icons/ai";
 import { GiHamburgerMenu } from "react-icons/gi";
+import NavDropdown from "./NavDropdown";
 
 function Navbar() {
   const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
@@ -24,6 +25,13 @@ function Navbar() {
     } catch (error) {
       console.error("Error fetching user session:", error);
     }
+  }
+
+  function handleLogout() {
+    signOut();
+    toast.success("Logged out");
+    setIsUserLoggedIn(false);
+    router.push("/");
   }
 
   useEffect(() => {
@@ -55,24 +63,14 @@ function Navbar() {
 
           <div className="flex items-center gap-2">
             {isUserLoggedIn ? (
-              <button className=" hidden desktop:flex items-center justify-center gap-2 px-[18px] py-[12px] rounded-[6px] bg-blue text-white">
-                <span
-                  className="text-[15px] font-poppins leading-none"
-                  onClick={() => {
-                    signOut();
-                    toast.success("Logged out");
-                    setIsUserLoggedIn(false);
-                    router.push("/");
-                  }}
-                >
-                  Logout
-                </span>
-              </button>
+              <>
+                <NavDropdown handleLogout={handleLogout} />
+              </>
             ) : (
-              <Link href={"/auth/signup"}>
+              <Link href={"/auth/signin"}>
                 <button className=" hidden desktop:flex items-center justify-center gap-2 px-[18px] py-[12px] rounded-[6px] bg-blue text-white">
                   <span className="text-[15px] font-poppins leading-none">
-                    Sign Up
+                    Login
                   </span>
                   <AiOutlineRight className="text-[15px]" />
                 </button>
