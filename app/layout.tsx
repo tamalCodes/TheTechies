@@ -1,3 +1,4 @@
+import Navbar from "@/components/shared/navbar/Navbar";
 import type { Metadata } from "next";
 import { Montserrat, Outfit, Poppins } from "next/font/google";
 import "./globals.css";
@@ -35,6 +36,7 @@ export default function RootLayout({
       <body
         className={`${poppins.variable} ${montserrat.variable} ${outfit.variable}  font-sans bg-[#FDFBF9] `}
       >
+        <Navbar />
         {children}
       </body>
     </html>

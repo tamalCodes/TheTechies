@@ -1,5 +1,8 @@
+"use client";
+
 import user1 from "@/public/assets/landing/user1.webp";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -14,12 +17,13 @@ import {
   DropdownMenuSubTrigger,
   DropdownMenuTrigger,
 } from "../Dropdown";
-
 interface NavDropdownProps {
   handleLogout: () => void;
 }
 
 const NavDropdown: React.FC<NavDropdownProps> = ({ handleLogout }) => {
+  const router = useRouter();
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -36,7 +40,11 @@ const NavDropdown: React.FC<NavDropdownProps> = ({ handleLogout }) => {
         <DropdownMenuLabel>My Account</DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
-          <DropdownMenuItem>
+          <DropdownMenuItem
+            onClick={() => {
+              router.push("/profile");
+            }}
+          >
             Profile
             <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
           </DropdownMenuItem>

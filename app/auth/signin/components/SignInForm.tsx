@@ -34,7 +34,8 @@ const SignInForm = () => {
     onSuccess: () => {
       toast.success("Signed in");
       setTimeout(() => {
-        router.push("/");
+        // router.push("/");
+        router.refresh();
       }, 800);
     },
 
